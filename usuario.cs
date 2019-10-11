@@ -6,5 +6,4 @@ class usuario
   public string Perfil_Risco;
 
 
-
 }
