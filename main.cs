@@ -10,18 +10,16 @@ class MainClass {
       if (criar == "S"){
     
 
-    Console.WriteLine("Digite seu nome: ");
-    c.nome= Console.ReadLine();
-    c.idade = 21;
-    c.cpf = "14334599737";
-    c.Perfil_Risco = "moderado";
-    c.criarconta(c.nome,c.cpf, c.idade);
-    Console.WriteLine("Conta Criada");
-
-
-
-    Console.WriteLine ( c.nome +" você tem ("+ c.Perfil_Risco + ")como perfil de risco");
-      }
+      Console.WriteLine("Digite seu nome: ");
+      c.nome= Console.ReadLine();
+      Console.WriteLine("Digite sua idade: ");
+      c.idade= int.Parse(Console.ReadLine());
+      Console.WriteLine("Digite seu cpf: ");
+      c.cpf= Console.ReadLine();
+      c.criarconta(c.nome,c.cpf, c.idade);
+      Console.WriteLine("Conta Criada com sucesso");
+    }
+    
 
     
   }
