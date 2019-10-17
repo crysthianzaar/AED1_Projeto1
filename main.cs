@@ -7,7 +7,8 @@ class MainClass {
     usuario c = new usuario();
     Console.WriteLine(" Deseja criar uma conta? ( S = sim, N = Não");
     criar= Console.ReadLine();
-      if (criar == "S"){
+
+    if (criar == "S"){
     
 
       Console.WriteLine("Digite seu nome: ");
@@ -19,7 +20,12 @@ class MainClass {
       c.criarconta(c.nome,c.cpf, c.idade);
       Console.WriteLine("Conta Criada com sucesso");
     }
-    
+
+    Console.WriteLine( " Qual o seu novo perfil?");
+    string newperfil = Console.ReadLine();
+    c.analise_de_perfil(newperfil);
+
+     
 
     
   }
