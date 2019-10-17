@@ -5,8 +5,9 @@ class usuario
   public string cpf;
   public string Perfil_Risco;
 
-  public void analise_de_perfil() {
- 
+  public void analise_de_perfil(string mudaPerfil_Risco) {
+  mudaPerfil_Risco = Perfil_Risco;
+
   }
 
   public void criarconta(string nome, string cpf, int idade) {
