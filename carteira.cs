@@ -17,3 +17,4 @@ public void setLucro(double novolucro  ){
   Console.WriteLine("Quanto de saldo disponível você tem para investir?");
   double sd_disponivel = double.Parse(Console.ReadLine());
  }
+public carteira(double lucro_prejuizo,double rentabilidade,double saldo_inicial){
