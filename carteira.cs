@@ -18,3 +18,7 @@ public void setLucro(double novolucro  ){
   double sd_disponivel = double.Parse(Console.ReadLine());
  }
 public carteira(double lucro_prejuizo,double rentabilidade,double saldo_inicial){
+ this.lucro_prejuizo=lucro_prejuizo;
+  this.saldo_inicial=saldo_inicial;
+  this.instituicao_financeira=instituicao_financeira;
+}
