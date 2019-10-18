@@ -4,31 +4,32 @@ using System;
 class MainClass {
   public static void Main (string[] args) {
     string criar;
+    string possui;
     usuario c = new usuario();
-    Console.WriteLine(" Deseja criar uma conta? ( S = sim, N = Não");
+
+    Console.WriteLine(" Você já possui uma conta? (s = sim, n = Não)");
+    possui = Console.ReadLine();
+      if(possui == "n"){
+
+    Console.WriteLine(" Deseja criar uma conta? (s = sim, n = Não)");
     criar= Console.ReadLine();
+      if ( criar =="s"){
+      c.criarconta();
+      }
+      if( criar != "s"){
+        Console.WriteLine(" Espero que mude de ideia em breve! :)");
+       Environment.Exit(0);
+      }
 
-    if (criar == "S"){
+      
     
-
-      Console.WriteLine("Digite seu nome: ");
-      c.nome= Console.ReadLine();
-      Console.WriteLine("Digite sua idade: ");
-      c.idade= int.Parse(Console.ReadLine());
-      Console.WriteLine("Digite seu cpf: ");
-      c.cpf= Console.ReadLine();
-      c.criarconta(c.nome,c.cpf, c.idade);
-      Console.WriteLine("Conta Criada com sucesso");
-    }
-
-    Console.WriteLine( " Qual o seu novo perfil?");
-    string newperfil = Console.ReadLine();
-    c.analise_de_perfil(newperfil);
+    c.analise_de_perfil();
 
      
 
-    
+   }  
   }
+
 }
 
 // Em Teste
