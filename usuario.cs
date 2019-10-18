@@ -1,10 +1,23 @@
 using System;
 class usuario
 {
-  public int idade=0;
-  public string nome= "";
-  public string cpf;
-  public string Perfil_Risco;
+  private int idade=0;
+  private string nome= "";
+  private string cpf;
+  private string Perfil_Risco;
+
+  public void SetNome(string nome){
+   this.nome = nome;
+  }
+  public string GetNome(){
+   return nome;
+  }
+  public void Set_cpf(string cpf){
+   this.cpf = cpf;
+  }
+  public string Get_cpf(){
+    return cpf;
+  }
 
   public void criarconta() {
     Console.WriteLine("Digite o seu nome:");
@@ -20,7 +33,7 @@ class usuario
 
   }
 
-  public void analise_de_perfil() {
+  public void SetAnalise_de_perfil() {
     int soma=0;
     double result;
     Console.WriteLine("Vamos fazer um pequeno teste de perfil sobre você");
@@ -125,13 +138,12 @@ class usuario
    
 
   }
-
+  
+  public string GetAnalise_de_Perfil(){
+    return Perfil_Risco;
+  }
   
   public void novoteste_de_perfil() {
  
   }
-
-
-
-
 }
