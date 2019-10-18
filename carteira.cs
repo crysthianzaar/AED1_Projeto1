@@ -9,4 +9,7 @@ public void setLucro(double novolucro  ){
 }
  private double setSaldo(double novosaldo){
   saldo_inicial=novosaldo;
-}
+
+ public string getBanco(){
+    return instituicao_financeira;
+ }
