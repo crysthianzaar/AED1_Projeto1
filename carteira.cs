@@ -11,5 +11,9 @@ public void setLucro(double novolucro  ){
   saldo_inicial=novosaldo;
 
  public string getBanco(){
-    return instituicao_financeira;
+  return instituicao_financeira;
+ }
+   public void inserirsaldo() {
+  Console.WriteLine("Quanto de saldo disponível você tem para investir?");
+  double sd_disponivel = double.Parse(Console.ReadLine());
  }
