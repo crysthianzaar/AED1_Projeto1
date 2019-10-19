@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+
 class usuario
 {
   private int idade=0;
@@ -26,10 +28,17 @@ class usuario
     idade= int.Parse(Console.ReadLine());
     Console.WriteLine("Digite o seu CPF:");
     cpf= Console.ReadLine();
+    Console.WriteLine("Digite uma senha: ");
+    string lersenha = Console.ReadLine();
+    TextWriter criar = new StreamWriter("senha.txt");
+    criar.WriteLine(lersenha);
+    // fecha o stream
+    criar.Close();
     Console.WriteLine("*****************************");
     Console.WriteLine("CONTA CRIADA COM SUCESSO! ");
     Console.WriteLine("Vamos para o próximo passo.");
     Console.WriteLine("*****************************");
+    
 
   }
 
@@ -128,22 +137,10 @@ class usuario
         Console.WriteLine("SEU PERFIL É: AGRESSIVO");
         Perfil_Risco = "agressivo";
       }
-      
-
-
-
-
-
-
-   
-
   }
   
   public string GetAnalise_de_Perfil(){
     return Perfil_Risco;
   }
   
-  public void novoteste_de_perfil() {
- 
-  }
 }
