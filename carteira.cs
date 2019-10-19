@@ -1,4 +1,6 @@
 using System;
+using System.IO;  
+
 class carteira
 {
   public double lucro_prejuizov= 0;
@@ -15,8 +17,7 @@ class carteira
   }
 
 
-
-
+}
   
 
 
