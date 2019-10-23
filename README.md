@@ -6,7 +6,7 @@
 # ESCOPO DO PROJETO
 - [X] Ao menos três classe.
 - [X] Cada classe precisará ter, ao menos, 3 métodos e 4 atributos significativos para a classe.
-- [ ] Deverá trabalhar persistência de dados por meio de leitura e escrita de arquivos.
-- [ ] Deverá promover uma integração das classes, por meio de relacionamentos ou listas de objetos.
-- [ ] Os modificadores de acesso devem estar adequados para garantir o encapsulamento dos métodos e atributos.
+- [X] Deverá trabalhar persistência de dados por meio de leitura e escrita de arquivos.
+- [X] Deverá promover uma integração das classes, por meio de relacionamentos ou listas de objetos.
+- [X] Os modificadores de acesso devem estar adequados para garantir o encapsulamento dos métodos e atributos.
 - [ ] Deverá fazer uso de estruturas de dados aprendidas como listas, vetores ou matrizes.
