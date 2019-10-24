@@ -3,13 +3,19 @@ using System.IO;
 
 class investimentos
 {
-  private double ativos_fisicos;
+  private double ativosfisicos;
   public string tesouro_direto;
   public string acoes;
   public string poupanca;
-  private double TaxaIPCA = 3.59;
+  private double TaxaIPCA;
+  private carteira cart;
 
-  public double GetIPCA(){
+  public void SetCarteira (carteira c){
+    cart = c;
+  }
+
+  public double GetIPCA(double TaxaIPCA){
+    TaxaIPCA = 3.59;
     return TaxaIPCA;
   }
 
@@ -44,6 +50,7 @@ class investimentos
     Console.WriteLine("5 - MENU DE EDUCAÇÃO FINANCEIRA");
     Console.WriteLine("6 - Fazer SIMULAÇÕS de investimentos");
     Console.WriteLine("7 - SAIR DO PROGRAMA");
+    Console.WriteLine("8 - IR PARA SUA CARTEIRA");
     string lerresposta = Console.ReadLine();
 
       if (lerresposta == "1"){
@@ -64,7 +71,12 @@ class investimentos
        if (lerresposta == "7"){
         Environment.Exit(0);
       }
+      if (lerresposta == "8"){
+       cart.menucarteira();
+       }
   }
+
+
 
   public void Educacao(){
    Console.WriteLine("calma, ja te ajudo.");
@@ -83,8 +95,26 @@ class investimentos
     Console.WriteLine();
     Console.WriteLine("*****Adicionar um investimentos em ativos físicos***");
     Console.WriteLine("Digite o Valor que você deseja adicionar em ativos físicos: ");
-    double ler1 = double.Parse(Console.ReadLine());
-    ativos_fisicos = ativos_fisicos + ler1;
+    // LENDO O VALOR ADICIONADO
+    double lervalor = double.Parse(Console.ReadLine());
+    // LENDO O ARQUIVO
+    Stream entrada = File.Open("ativos_fisicos.txt", FileMode.Open);
+    StreamReader leitor = new StreamReader(entrada);
+    // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+    double linha = double.Parse(leitor.ReadLine());
+    leitor.Close();
+    entrada.Close();
+    // ESCREVENDO NO ARQUIVO
+    Stream saida = File.Open("ativos_fisicos.txt", FileMode.Create);
+    StreamWriter escritor = new StreamWriter(saida);
+    // VARIAVEL PARA SOMAR OS RESULTADOS
+    double result = linha + lervalor;
+    // GRAVANDO OS RESULTADOS
+    escritor.WriteLine(result);
+    escritor.Close();
+    saida.Close();
+
+
     Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
     Menu_De_Investimentos();
   }
@@ -195,8 +225,5 @@ class investimentos
     }
     
 
-
-
-
-
 }
+
