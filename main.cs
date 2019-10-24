@@ -9,6 +9,7 @@ class MainClass {
 
   investimentos a = new investimentos();
   carteira b = new carteira ();
+  a.SetCarteira(b);
   usuario c = new usuario();
   login d = new login();
 
