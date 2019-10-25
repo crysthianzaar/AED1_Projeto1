@@ -4,14 +4,38 @@ using System.IO;
 class investimentos
 {
   private double ativosfisicos;
-  public string tesouro_direto;
-  public string acoes;
-  public string poupanca;
+  public double tesouro_direto;
+  public double acoes;
+  public double poupanca;
   private double TaxaIPCA;
   private carteira cart;
 
   public void SetCarteira (carteira c){
     cart = c;
+  }
+  public void SetAtivosFisicos() {
+  ativosfisicos = 0; // INICIAL
+  }
+  public double GetAtivosFisicos(){
+    return ativosfisicos;
+  }
+  public void SetTesouro() {
+  tesouro_direto = 0; // INICIAL
+  }
+  public double GetTesouro(){
+    return tesouro_direto;
+  }
+  public void SetAllAcoes() {
+  acoes = 0; // INICIAL
+  }
+  public double GetAcoes(){
+    return acoes;
+  }
+  public void SetPoupanca() {
+  poupanca = 0; // INICIAL
+  }
+  public double GetPoupanca(){
+    return poupanca;
   }
 
   public double GetIPCA(double TaxaIPCA){
@@ -23,9 +47,8 @@ class investimentos
     if (b.GetSaldo_inicial() <= 0){
       Console.WriteLine();
       Console.WriteLine("OK, não tem problema!");
-      Console.WriteLine("Podemos te explicar um pouco sobre finanças, o que acha?");
       Console.WriteLine();
-      Console.WriteLine("No Menu Principal você pode escolher a opção EDUCAÇÃO FINANCEIRA");
+      Console.WriteLine("No Menu Principal você pode escolher a opção SIMULAÇÕES");
       Console.WriteLine();
       Console.WriteLine();
       Menu_De_Investimentos();
@@ -41,16 +64,16 @@ class investimentos
     Console.WriteLine("******************************************");
     Console.WriteLine("************* MENU PRINCIPAL**************");
     Console.WriteLine("******************************************");
-    Console.WriteLine("Escolha uma opção:");
+    Console.WriteLine("Escolha uma opção para adicionar ou retirar investimentos:");
     Console.WriteLine();
     Console.WriteLine("1 - Ativos físicos");
     Console.WriteLine("2 - Tesouro direto");
     Console.WriteLine("3 - Ações");
     Console.WriteLine("4 - Poupança");
-    Console.WriteLine("5 - MENU DE EDUCAÇÃO FINANCEIRA");
-    Console.WriteLine("6 - Fazer SIMULAÇÕS de investimentos");
+    Console.WriteLine("6 - Fazer SIMULAÇÃO de investimentos");
     Console.WriteLine("7 - SAIR DO PROGRAMA");
     Console.WriteLine("8 - IR PARA SUA CARTEIRA");
+    Console.WriteLine("9 - CALCULAR RENTABILIDADE DE INVESTIMENTOS");
     string lerresposta = Console.ReadLine();
 
       if (lerresposta == "1"){
@@ -65,9 +88,6 @@ class investimentos
       if (lerresposta == "4"){
         Poupanca();
       }
-      if (lerresposta == "5"){
-        Educacao();
-      }
       if (lerresposta == "6"){
         Simulacao();
       }
@@ -77,13 +97,36 @@ class investimentos
       if (lerresposta == "8"){
        cart.menucarteira();
        }
+       if (lerresposta == "9"){
+        RentabilidadeSimula();
+      }
+
   }
+  public void RentabilidadeSimula(){
+        Console.WriteLine("****CALCULAR RENTABILIDADE*****");
+        Console.WriteLine("Digite o valor: ");
+        double valorsimulado = double.Parse(Console.ReadLine());
+        Console.WriteLine("Digite a rentabilidade Anual do invetimento: ");
+        double rentabilidadesimulada = double.Parse(Console.ReadLine());
+        Console.WriteLine("Digite o tempo que deseja investir em ANOS: ");
+        double tempo = double.Parse(Console.ReadLine());
+        double rent = rentabilidadesimulada/100;
+        double resultado = (valorsimulado*(Math.Pow(1+rent, tempo))-valorsimulado);
+
+        Console.WriteLine("O LUCRO DESSE INVESTIMENTO SERÁ: R$ "+ resultado );
+        double valorfinal = valorsimulado*(Math.Pow(1+rent, tempo));
+        Console.WriteLine("O MONTANTE FINAL DESSE INVESTIMENTO SERÁ: R$ "+ valorfinal );
+        Console.WriteLine("Aperte qualquer tecla para continuar");
+        Console.ReadKey();
+        Menu_De_Investimentos();
+  }
+
 
   public void AtivosFisicos(){
     Console.WriteLine();
     Console.WriteLine();
-    Console.WriteLine("*****Adicionar um investimentos em ativos físicos***");
-    Console.WriteLine("Digite o Valor que você deseja adicionar em ativos físicos: ");
+    Console.WriteLine("*****Adicionar ou retirar um investimentos em ativos físicos***");
+    Console.WriteLine("Digite o Valor que você deseja adicionar ou retirar em ativos físicos: ");
     // LENDO O VALOR ADICIONADO
     double lervalor = double.Parse(Console.ReadLine());
     // LENDO O ARQUIVO
@@ -102,16 +145,14 @@ class investimentos
     escritor.WriteLine(result);
     escritor.Close();
     saida.Close();
-
-
     Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
     Menu_De_Investimentos();
   }
   public void Poupanca(){
     Console.WriteLine();
     Console.WriteLine();
-    Console.WriteLine("*****Adicionar um investimentos em ativos físicos***");
-    Console.WriteLine("Digite o Valor que você deseja adicionar em ativos físicos: ");
+    Console.WriteLine("*****Adicionar ou Retirar da poupança***");
+    Console.WriteLine("Digite o Valor que você deseja adicionar ou Retirar da poupança ");
     // LENDO O VALOR ADICIONADO
     double lervalor = double.Parse(Console.ReadLine());
     // LENDO O ARQUIVO
@@ -130,22 +171,15 @@ class investimentos
     escritor.WriteLine(result);
     escritor.Close();
     saida.Close();
-
-
     Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
     Menu_De_Investimentos();
   }
 
-  public void Educacao(){
-   Console.WriteLine("calma, ja te ajudo.");
-  }
-
-
   public void SetAcoes(){
    Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine("*****Adicionando um investimentos***");
-        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        Console.WriteLine("*****Adicionar ou Retirar um investimento em Ações***");
+        Console.WriteLine("Digite o Valor que você deseja Adicionar ou Retirar: ");
         // LENDO O VALOR ADICIONADO
         double lervalor = double.Parse(Console.ReadLine());
         // LENDO O ARQUIVO
@@ -164,7 +198,9 @@ class investimentos
         escritor.WriteLine(result);
         escritor.Close();
         saida.Close();
-
+        Console.WriteLine("Aperte qualquer tecla para continuar");
+        Console.ReadKey();
+        Menu_De_Investimentos();
     }
 
 
@@ -174,7 +210,6 @@ class investimentos
    Console.WriteLine("2 - CDB");
    Console.WriteLine("3 - Tesouro Direto");
    Console.WriteLine("4 - TODOS");
-
    string escolha = Console.ReadLine();
     if(escolha == "1"){
       Console.WriteLine("Digite o valor que você quer fazerma simulação:");
@@ -228,7 +263,6 @@ class investimentos
       Console.WriteLine("***************************");
       Console.WriteLine("ATENÇÃO!! AS TAXAS MUDAM, ESTAMOS LEVANDO EM CONTA TAXAS DE SETEMBRO DE 2019");
       Console.WriteLine("***************************");
-
      // SELIC referente a setembro de 2019
     }
       Console.WriteLine("Aperte qualquer tecla para continuar");
@@ -359,13 +393,6 @@ class investimentos
         Menu_De_Investimentos();
       }
       
-
-
     }
-    
-
-
-
-
 
 }
