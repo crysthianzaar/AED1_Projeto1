@@ -1,9 +1,9 @@
 # PROJETO 1 - Algoritmos e Estruturas de Dados I
-> APP Console em C#, com o objetivo de possibilitar o usuario a fazer controle de investimentos, com opções desde poupança até ações.  Com opção de simulação de investimentos, além de calcular rentabilidade de investimentos.
+> APP Console em C#, com o objetivo de possibilitar o usuario a fazer controle de investimentos, com opções desde poupança até ações.  Com opção de simulação de investimentos e calcular rentabilidade de investimentos.
 
 **Para ver a modelagem do projeto:** [Clique aqui](https://coggle.it/diagram/XaB8EsyjCiYHwrcJ/t/projeto_aed1)
 
-**Projeto no Repl.it:** [Clique aqui](https://repl.it/@crysthianzaar/ProjetoAED1)
+**Projeto no Repl.it:** [Clique aqui](https://repl.it/@crysthianzaar/Projeto1-AED)
 # ESCOPO DO PROJETO
 - [X] Ao menos três classe.
 - [X] Cada classe precisará ter, ao menos, 3 métodos e 4 atributos significativos para a classe.
