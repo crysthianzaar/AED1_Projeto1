@@ -1,4 +1,5 @@
-# Projeto 1 - Algoritmos e Estruturas de dados I
+# PROJETO 1 - Algoritmos e Estruturas de Dados I
+> APP Console em C#, com o objetivo de possibilitar o usuario a fazer controle de investimentos, com opções desde poupança atpe ações.  Com opção de simulação de investimentos, além de calcular rentabilidade de investimentos.
 
 **Para ver a modelagem do projeto:** [Clique aqui](https://coggle.it/diagram/XaB8EsyjCiYHwrcJ/t/projeto_aed1)
 
@@ -9,4 +10,3 @@
 - [X] Deverá trabalhar persistência de dados por meio de leitura e escrita de arquivos.
 - [X] Deverá promover uma integração das classes, por meio de relacionamentos ou listas de objetos.
 - [X] Os modificadores de acesso devem estar adequados para garantir o encapsulamento dos métodos e atributos.
-- [ ] Deverá fazer uso de estruturas de dados aprendidas como listas, vetores ou matrizes.
