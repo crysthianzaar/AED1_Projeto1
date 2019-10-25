@@ -1,5 +1,5 @@
 # PROJETO 1 - Algoritmos e Estruturas de Dados I
-> APP Console em C#, com o objetivo de possibilitar o usuario a fazer controle de investimentos, com opções desde poupança atpe ações.  Com opção de simulação de investimentos, além de calcular rentabilidade de investimentos.
+> APP Console em C#, com o objetivo de possibilitar o usuario a fazer controle de investimentos, com opções desde poupança até ações.  Com opção de simulação de investimentos, além de calcular rentabilidade de investimentos.
 
 **Para ver a modelagem do projeto:** [Clique aqui](https://coggle.it/diagram/XaB8EsyjCiYHwrcJ/t/projeto_aed1)
 
