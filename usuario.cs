@@ -3,8 +3,8 @@ using System.IO;
 
 class usuario
 {
-  private int idade=0;
-  private string nome= "";
+  private int idade;
+  private string nome;
   private string cpf;
   private string Perfil_Risco;
 
@@ -23,7 +23,8 @@ class usuario
 
   public void criarconta() {
     Console.WriteLine("Digite o seu nome:");
-    nome= Console.ReadLine();
+    string nome = Console.ReadLine();
+    // fecha o stream
     Console.WriteLine("Digite a sua Idade: ");
     idade= int.Parse(Console.ReadLine());
     Console.WriteLine("Digite o seu CPF:");
