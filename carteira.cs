@@ -21,6 +21,10 @@ class carteira
   public double GetSaldo_inicial(){
     return saldo_inicial;
   }
+  public double GetRentabilidade(){
+    return rentabilidade;
+  }
+
   
   public void menucarteira (){
     Console.WriteLine("*************************************");
@@ -37,20 +41,50 @@ class carteira
 
     string leropcao = Console.ReadLine();
       if(leropcao =="1"){
-        // EM CONTRUÇÃO
-
-      }
-      if(leropcao =="2"){
+        if(leropcao == "1"){
         // LENDO O ARQUIVO
         Stream entrada = File.Open("Selic.txt", FileMode.Open);
         StreamReader leitor = new StreamReader(entrada);
         // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
         double linha = double.Parse(leitor.ReadLine());
-        Console.WriteLine("SEU SALDO NO TESOURO DIRETO É: R$ "+ linha);
+        Console.WriteLine("SEU SALDO NO TESOURO SELIC É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+
+      }
+      if(leropcao == "1"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCA2024.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO NO TESOURO IPCA 2024 É: R$ "+ linha);
         leitor.Close();
         entrada.Close();
       }
-      if(leropcao =="3"){
+      if(leropcao == "1"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCA2035.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO NO TESOURO IPCA 2035 É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+
+      }
+      if(leropcao == "1"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCAJS2023.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO NO TESOURO IPCA Com Juros Semestrais 2023 É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+
+      }
+      if(leropcao =="1"){
         // LENDO O ARQUIVO
         Stream entrada = File.Open("acoes.txt", FileMode.Open);
         StreamReader leitor = new StreamReader(entrada);
@@ -61,15 +95,59 @@ class carteira
         entrada.Close();
         
       }
-      if(leropcao =="4"){
+      if(leropcao =="1"){
         // LENDO O ARQUIVO
         Stream entrada = File.Open("poupanca.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO EM POUPANÇA É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+      }
+      Console.WriteLine("Aperte qualquer tecla para continuar");
+       Console.ReadKey();
+       menucarteira ();
+      }
+      if(leropcao == "2"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("Selic.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO NO TESOURO DIRETO É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+        Console.WriteLine("Aperte qualquer tecla para continuar");
+       Console.ReadKey();
+       menucarteira ();
+      }
+      if(leropcao =="3"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("acoes.txt", FileMode.Open);
         StreamReader leitor = new StreamReader(entrada);
         // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
         double linha = double.Parse(leitor.ReadLine());
         Console.WriteLine("SEU SALDO EM AÇÕES É: R$ "+ linha);
         leitor.Close();
         entrada.Close();
+        Console.WriteLine("Aperte qualquer tecla para continuar");
+       Console.ReadKey();
+       menucarteira ();
+        
+      }
+      if(leropcao =="4"){
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("poupanca.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        Console.WriteLine("SEU SALDO EM POUPANÇA É: R$ "+ linha);
+        leitor.Close();
+        entrada.Close();
+        Console.WriteLine("Aperte qualquer tecla para continuar");
+       Console.ReadKey();
+       menucarteira ();
       }
       if(leropcao =="5"){
         total.Menu_De_Investimentos();
@@ -77,8 +155,5 @@ class carteira
       if(leropcao =="6"){
         Environment.Exit(0);
       }
-  
   }
-
-
 }
