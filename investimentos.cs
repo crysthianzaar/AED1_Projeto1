@@ -57,10 +57,13 @@ class investimentos
         AtivosFisicos();
       }
       if (lerresposta == "2"){
-        Tesouro();
+        TitulosTesouro();
       }
       if (lerresposta == "3"){
         SetAcoes();
+      }
+      if (lerresposta == "4"){
+        Poupanca();
       }
       if (lerresposta == "5"){
         Educacao();
@@ -74,20 +77,6 @@ class investimentos
       if (lerresposta == "8"){
        cart.menucarteira();
        }
-  }
-
-
-
-  public void Educacao(){
-   Console.WriteLine("calma, ja te ajudo.");
-  }
-
-  public void Tesouro(){
-   Console.WriteLine("calma, ja te ajudo.");
-  }
-
-  public void SetAcoes(){
-   Console.WriteLine("calma, ja te ajudo.");
   }
 
   public void AtivosFisicos(){
@@ -118,6 +107,66 @@ class investimentos
     Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
     Menu_De_Investimentos();
   }
+  public void Poupanca(){
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("*****Adicionar um investimentos em ativos físicos***");
+    Console.WriteLine("Digite o Valor que você deseja adicionar em ativos físicos: ");
+    // LENDO O VALOR ADICIONADO
+    double lervalor = double.Parse(Console.ReadLine());
+    // LENDO O ARQUIVO
+    Stream entrada = File.Open("poupanca.txt", FileMode.Open);
+    StreamReader leitor = new StreamReader(entrada);
+    // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+    double linha = double.Parse(leitor.ReadLine());
+    leitor.Close();
+    entrada.Close();
+    // ESCREVENDO NO ARQUIVO
+    Stream saida = File.Open("poupanca.txt", FileMode.Create);
+    StreamWriter escritor = new StreamWriter(saida);
+    // VARIAVEL PARA SOMAR OS RESULTADOS
+    double result = linha + lervalor;
+    // GRAVANDO OS RESULTADOS
+    escritor.WriteLine(result);
+    escritor.Close();
+    saida.Close();
+
+
+    Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
+    Menu_De_Investimentos();
+  }
+
+  public void Educacao(){
+   Console.WriteLine("calma, ja te ajudo.");
+  }
+
+
+  public void SetAcoes(){
+   Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("*****Adicionando um investimentos***");
+        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        // LENDO O VALOR ADICIONADO
+        double lervalor = double.Parse(Console.ReadLine());
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("acoes.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        leitor.Close();
+        entrada.Close();
+        // ESCREVENDO NO ARQUIVO
+        Stream saida = File.Open("acoes.txt", FileMode.Create);
+        StreamWriter escritor = new StreamWriter(saida);
+        // VARIAVEL PARA SOMAR OS RESULTADOS
+        double result = linha + lervalor;
+        // GRAVANDO OS RESULTADOS
+        escritor.WriteLine(result);
+        escritor.Close();
+        saida.Close();
+
+    }
+
 
   public void Simulacao(){
    Console.WriteLine("Qual o tipo de investimento você deseja simular? ");
@@ -180,50 +229,143 @@ class investimentos
       Console.WriteLine("ATENÇÃO!! AS TAXAS MUDAM, ESTAMOS LEVANDO EM CONTA TAXAS DE SETEMBRO DE 2019");
       Console.WriteLine("***************************");
 
-
-
      // SELIC referente a setembro de 2019
     }
       Console.WriteLine("Aperte qualquer tecla para continuar");
       Console.ReadKey();
     Menu_De_Investimentos();
-   }
+  }
 
-    public void TitulosTesouro(){
+  public void TitulosTesouro(){
       Console.WriteLine("ESCOLHA A SUA OPÇÃO DO TESOURO DIRETO:");
       Console.WriteLine();
       Console.WriteLine("1 - Tesouro IPCA+ 2024	-	IPCA + 2,27% a.a");
       Console.WriteLine("2 - Tesouro IPCA+ 2035	-	IPCA + 3,17% a.a");
       Console.WriteLine("3 - Tesouro IPCA+ com Juros Semestrais 2026	-	IPCA + 2,52% a.a");
-      Console.WriteLine("4 - Tesouro IPCA+ com Juros Semestrais 2035 -	IPCA + 3,03% a.a");
-      Console.WriteLine("5 - Tesouro Prefixado 2025	- 6,19%     a.a");
-      Console.WriteLine("6 - Tesouro Prefixado com Juros  Semestrais 2029	-	6,56% a.a");
-      Console.WriteLine("7 -  Tesouro Selic 2025 -	Selic + 0,  02 a.a");
+      Console.WriteLine("4 -  Tesouro Selic 2025 -	Selic + 0,  02 a.a");
       string escolha = Console.ReadLine();
       if(escolha == "1"){
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("*****Adicionando um investimentos***");
+        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        // LENDO O VALOR ADICIONADO
+        double lervalor = double.Parse(Console.ReadLine());
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCA2024.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        leitor.Close();
+        entrada.Close();
+        // ESCREVENDO NO ARQUIVO
+        Stream saida = File.Open("IPCA2024.txt", FileMode.Create);
+        StreamWriter escritor = new StreamWriter(saida);
+        // VARIAVEL PARA SOMAR OS RESULTADOS
+        double result = linha + lervalor;
+        // GRAVANDO OS RESULTADOS
+        escritor.WriteLine(result);
+        escritor.Close();
+        saida.Close();
+
+
+        Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
+        Menu_De_Investimentos();
+      
       }
       if(escolha == "2"){
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("*****Adicionando um investimentos***");
+        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        // LENDO O VALOR ADICIONADO
+        double lervalor = double.Parse(Console.ReadLine());
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCA2035.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        leitor.Close();
+        entrada.Close();
+        // ESCREVENDO NO ARQUIVO
+        Stream saida = File.Open("IPCA2035.txt", FileMode.Create);
+        StreamWriter escritor = new StreamWriter(saida);
+        // VARIAVEL PARA SOMAR OS RESULTADOS
+        double result = linha + lervalor;
+        // GRAVANDO OS RESULTADOS
+        escritor.WriteLine(result);
+        escritor.Close();
+        saida.Close();
+
+
+        Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
+        Menu_De_Investimentos();
+      
 
       }
       if(escolha == "3"){
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("*****Adicionando um investimentos***");
+        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        // LENDO O VALOR ADICIONADO
+        double lervalor = double.Parse(Console.ReadLine());
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("IPCAJS2026.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        leitor.Close();
+        entrada.Close();
+        // ESCREVENDO NO ARQUIVO
+        Stream saida = File.Open("IPCAJS2026.txt", FileMode.Create);
+        StreamWriter escritor = new StreamWriter(saida);
+        // VARIAVEL PARA SOMAR OS RESULTADOS
+        double result = linha + lervalor;
+        // GRAVANDO OS RESULTADOS
+        escritor.WriteLine(result);
+        escritor.Close();
+        saida.Close();
+
+
+        Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
+        Menu_De_Investimentos();
 
       }
       if(escolha == "4"){
-
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("*****Adicionando um investimentos***");
+        Console.WriteLine("Digite o Valor que você deseja adicionar: ");
+        // LENDO O VALOR ADICIONADO
+        double lervalor = double.Parse(Console.ReadLine());
+        // LENDO O ARQUIVO
+        Stream entrada = File.Open("Selic.txt", FileMode.Open);
+        StreamReader leitor = new StreamReader(entrada);
+        // SALVANDO O QUE CONTEM NO ARQUIVO  ACIMA
+        double linha = double.Parse(leitor.ReadLine());
+        leitor.Close();
+        entrada.Close();
+        // ESCREVENDO NO ARQUIVO
+        Stream saida = File.Open("Selic.txt", FileMode.Create);
+        StreamWriter escritor = new StreamWriter(saida);
+        // VARIAVEL PARA SOMAR OS RESULTADOS
+        double result = linha + lervalor;
+        // GRAVANDO OS RESULTADOS
+        escritor.WriteLine(result);
+        escritor.Close();
+        saida.Close();
+        Console.WriteLine("****ADICIONADO COM SUCESSO A SUA CARTEIRA*****");
+        Menu_De_Investimentos();
       }
-      if(escolha == "5"){
-
-      }
-      if(escolha == "6"){
-
-      }
-      if(escolha == "7"){
-
-      }
+      
 
 
     }
     
 
-}
 
+
+
+
+}
